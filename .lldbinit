@@ -1,0 +1,4 @@
+setting set target.x86-disassembly-flavor intel
+setting set prompt (ryaoi)
+script banner="                         _\n     ______ _____ ____  (_)\n    / __/ // / _ `/ _ \\/ / \n   /_/  \\_, /\\_,_/\\___/_/  \n       /___/    "
+script print('\033[92m' + banner + '\033[0m')
