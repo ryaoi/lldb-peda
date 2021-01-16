@@ -87,6 +87,8 @@ def Registers(debugger, command, result, internal_dict):
     for registers in registerList:
         for register in registers:
             regName = register.GetName()
+            print(regName)
+            continue
             if regName in OUTPUT_REGISTERS:
                     print(f"{bcolors.OKGREEN}{regName}{bcolors.ENDC}: {register.GetValue()}")
             elif regName == 'rflags':
@@ -111,8 +113,8 @@ def Peda(debugger, command, result, internal_dict):
     Stack(debugger, command, result, internal_dict)
 
 def __lldb_init_module(debugger, internal_dict):
-    debugger.HandleCommand('command script add -f peda.Registers reg')
-    debugger.HandleCommand('command script add -f peda.Code code')
-    debugger.HandleCommand('command script add -f peda.Stack stack')
-    debugger.HandleCommand('command script add -f peda.Peda peda')
+    debugger.HandleCommand('command script add -f reverse.Registers reg')
+    debugger.HandleCommand('command script add -f reverse.Code code')
+    debugger.HandleCommand('command script add -f reverse.Stack stack')
+    debugger.HandleCommand('command script add -f reverse.Peda peda')
 
