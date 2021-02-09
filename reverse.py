@@ -87,8 +87,6 @@ def Registers(debugger, command, result, internal_dict):
     for registers in registerList:
         for register in registers:
             regName = register.GetName()
-            print(regName)
-            continue
             if regName in OUTPUT_REGISTERS:
                     print(f"{bcolors.OKGREEN}{regName}{bcolors.ENDC}: {register.GetValue()}")
             elif regName == 'rflags':
